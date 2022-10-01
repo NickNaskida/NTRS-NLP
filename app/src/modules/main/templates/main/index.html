@@ -10,7 +10,14 @@
             <button class="search_butt" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </section>
+
     {% include('nav.html') %}
+
+    {% if search_query %}
+        <section class="search">
+            <h3>Search Results For: {{ search_query }}</h3>
+        </section>
+    {% endif %}
 
     <section class="uploaded_files">
         {% for file in files %}
@@ -23,6 +30,9 @@
                         <h4>{{ file.pdf_filename }}</h4>
                         <span class="badge date-badge">{{ file.upload_date.strftime('%Y-%m-%d') }}</span>
                     </div>
+                    <a class="download_butt" href="{{ url_for('main.download', filename=file.pdf_filename_alt) }}">
+                        <i class="fa-regular fa-eye"></i>
+                    </a>
                 </header>
                 <div class="file_card_body">
                     <p>
@@ -34,6 +44,17 @@
                         {{ file.collocations }}
                     </p>
                 </div>
+            </div>
+        {% else %}
+            <div class="nothing_found">
+                <lord-icon
+                    src="https://cdn.lordicon.com/cvpqeffe.json"
+                    trigger="loop"
+                    colors="primary:#112d4e,secondary:#3f72af"
+                    stroke="65"
+                    style="width:200px;height:200px">
+                </lord-icon>
+                <h5>Nothing Found</h5>
             </div>
         {% endfor %}
     </section>
