@@ -17,10 +17,11 @@ COPY ./requirements.txt ./requirements.txt
 COPY ./requirements ./requirements
 
 RUN apk add build-base   # install the GCC, libc-dev and binutils packages (greenlet error)
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # NLTK stop words download
-RUN [ "python3", "-c", "import nltk; nltk.download('stopwords'); nltk.download('punkt')" ]
+RUN [ "python3", "-c", "import nltk; nltk.download('stopwords'); nltk.download('punkt'); nltk.download('wordnet')" ]
 
 # copy project
 COPY . .

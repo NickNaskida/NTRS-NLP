@@ -15,7 +15,7 @@ migrate = Migrate()
 cache = Cache()
 debug_toolbar = DebugToolbarExtension()
 flask_static_digest = FlaskStaticDigest()
-celery = Celery(__name__, broker=CELERY_BROKER_URL, backend=CELERY_RESULT_BACKEND)
+celery = Celery(__name__, broker=CELERY_BROKER_URL)  # , backend=CELERY_RESULT_BACKEND)
 
 extensions = [db, cache, debug_toolbar, flask_static_digest]
 extensions_with_db = [migrate]

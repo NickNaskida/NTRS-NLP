@@ -73,5 +73,6 @@ def create_app() -> Flask:
     register_error_handlers(app)
     register_shell_context(app)
     register_commands(app)
+    import_models()
 
     return app

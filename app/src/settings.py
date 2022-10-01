@@ -10,7 +10,7 @@ from pathlib import Path
 
 from environs import Env
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 env = Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
@@ -35,12 +35,12 @@ class Config(object):
     CACHE_TYPE = env.str("CACHE_TYPE")
 
     # Upload
-    UPLOAD_FOLDER = os.path.join(BASE_DIR, env.str("UPLOAD_FOLDER", default="uploads/"))
+    UPLOAD_FOLDER = os.path.join(BASE_DIR, env.str("UPLOAD_FOLDER", default="uploads"))
     ALLOWED_EXTENSIONS = ('pdf',)
 
     # Celery
-    CELERY_BROKER_URL = "redis://localhost"
-    CELERY_RESULT_BACKEND = "redis://localhost"
+    CELERY_BROKER_URL = "redis://redis:6379/0"
+    CELERY_RESULT_BACKEND = "redis://redis:6379/0"
 
     @staticmethod
     def get_debug_status() -> bool:

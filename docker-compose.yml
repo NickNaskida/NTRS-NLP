@@ -10,10 +10,10 @@ services:
       FLASK_APP: manage.py
     volumes:
       - app-data:/app
-      - app-uploads:/app/uploads
-    depends_on:
-      - redis
+      - app-uploads:/app/src/uploads
     links:
+      - redis
+    depends_on:
       - redis
     networks:
       - app-network
@@ -28,15 +28,15 @@ services:
       - app-network
 
   celery:
-    build: .
+    build: ./app
     container_name: "app-celery"
-    command: celery -A app.jobs.tasks worker --pool=solo --loglevel=INFO
+    command: celery -A src.jobs.tasks worker --pool=solo --loglevel=INFO
     volumes:
       - app-data:/app
-      - app-uploads:/app/uploads
-    depends_on:
-      - redis
+      - app-uploads:/app/src/uploads
     links:
+      - redis
+    depends_on:
       - redis
     networks:
       - app-network
@@ -45,6 +45,7 @@ volumes:
   app-data:
     name: app-data
   app-uploads:
-      name: app-uploads
+    name: app-uploads
+
 networks:
   app-network:
