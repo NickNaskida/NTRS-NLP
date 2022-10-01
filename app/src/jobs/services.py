@@ -50,7 +50,7 @@ def extract_keywords_and_collocations(pdf_text) -> tuple:
     for item in nltk_text.collocation_list():
         collocation_words.append(str(item[0]) + ' ' + str(item[1]))
 
-    return ",".join(frequent_words), ",".join(collocation_words)
+    return ", ".join(frequent_words), ", ".join(collocation_words)
 
 
 # def summarize_text(pdf_text):

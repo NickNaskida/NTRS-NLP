@@ -18,7 +18,7 @@ def upload():
     if form.validate_on_submit():
         process_uploaded_file(form.pdf_file.data, form.pdf_file.data.filename)
 
-        flash('File is being processed ...', 'info')
+        flash('File processed successfully', 'success')
         return redirect(url_for('main.index'))
 
     return render_template('upload.html', form=form)

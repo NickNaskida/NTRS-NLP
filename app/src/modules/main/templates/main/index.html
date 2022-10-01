@@ -6,14 +6,36 @@
     <h1>NTRS NLP</h1>
     <section class="search">
         <form action="/" method="POST" class="search_form" id="search_form">
-            <input type="text" name="query" id="search_input" placeholder="Search by keywords ..." required>
+            <input type="text" name="query" id="search_input" placeholder="Search by keywords or collocations ..." required>
             <button class="search_butt" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </section>
     {% include('nav.html') %}
 
     <section class="uploaded_files">
-
+        {% for file in files %}
+            <div class="file_card">
+                <header class="file_card_header">
+                    <div class="pdf_icon">
+                        PDF
+                    </div>
+                    <div class="file_info">
+                        <h4>{{ file.pdf_filename }}</h4>
+                        <span class="badge date-badge">{{ file.upload_date.strftime('%Y-%m-%d') }}</span>
+                    </div>
+                </header>
+                <div class="file_card_body">
+                    <p>
+                        <h5>Keywords:</h5>
+                        {{ file.keywords }}
+                    </p>
+                    <p>
+                        <h5>Collocations:</h5>
+                        {{ file.collocations }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
     </section>
 
     <script type="text/javascript" src="{{ static_url_for('static', filename='js/index.js') }}"></script>
