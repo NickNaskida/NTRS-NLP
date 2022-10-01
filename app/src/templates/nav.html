@@ -1,0 +1,34 @@
+<nav class="navbar">
+    <a href="{{ url_for('main.index') }}">
+        <div class="nav_link {% if request.endpoint == 'main.index' %}nav_link__active{% endif %}">
+            <div class="nav_link_icon">
+                <lord-icon
+                    src="https://cdn.lordicon.com/wrprwmwt.json"
+                    trigger="morph"
+                    colors="primary:#112d4e,secondary:#3f72af"
+                    stroke="65"
+                    style="width:45px;height:45px">
+                </lord-icon>
+            </div>
+            <div class="nav_link_title">
+                Report Server
+            </div>
+        </div>
+    </a>
+    <a href="{{ url_for('upload.upload') }}">
+        <div class="nav_link {% if request.endpoint == 'upload.upload' %}nav_link__active{% endif %}">
+            <div class="nav_link_icon">
+                <lord-icon
+                    src="https://cdn.lordicon.com/nocovwne.json"
+                    trigger="hover"
+                    colors="primary:#112d4e,secondary:#3f72af"
+                    stroke="65"
+                    style="width:45px;height:45px">
+                </lord-icon>
+            </div>
+            <div class="nav_link_title">
+                Upload File
+            </div>
+        </div>
+    </a>
+</nav>

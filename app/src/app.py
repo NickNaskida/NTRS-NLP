@@ -7,7 +7,8 @@ from src.extensions import extensions, extensions_with_db
 
 def import_models() -> None:
     """Import models here for Flask-Migrate to work."""
-    pass
+    from src.modules.upload.models import FileModel
+
 
 def register_extensions(app: Flask) -> None:
     """Register Flask extensions."""

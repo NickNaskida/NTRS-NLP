@@ -31,6 +31,7 @@ h1 {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #112D4E;
 }
 
 a {
@@ -115,7 +116,7 @@ a:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 180px;
 }
 
 .nav_link {
@@ -134,6 +135,10 @@ a:hover {
     height: 55px;
     border-radius: 50%;
     background-color: #DBE2EF;
+}
+
+.nav_link__active .nav_link_title {
+    font-weight: 700;
 }
 
 .nav_link_title {
