@@ -261,3 +261,12 @@ input[type=file]::file-selector-button:hover {
 .upload_butt:hover {
     transform: scale(1.05);
 }
+
+
+/*=========responsive=========*/
+@media (max-width: 1080px) {
+    .uploaded_files {
+        grid-template-columns: repeat(2, 385px);
+        width: 800px;
+    }
+}
