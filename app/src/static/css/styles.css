@@ -3,7 +3,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     margin: 0;
     font-size: 15px;
@@ -74,6 +74,16 @@ a:hover {
     background-color: #112D4E;
 }
 
+/*=========bootstrap=========*/
+.toast-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 /*=========main-page=========*/
 .search {
     margin-bottom: 2rem;
@@ -117,6 +127,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     width: 180px;
+    margin-bottom: 4rem;
 }
 
 .nav_link {
@@ -144,4 +155,37 @@ a:hover {
 .nav_link_title {
     font-size: 12px;
     font-weight: 500;
+}
+
+
+/*=========upload-page=========*/
+#UploadFile {
+    width: 400px;
+}
+
+input[type=file]::file-selector-button {
+  background-color: #DBE2EF;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #DBE2EF;
+}
+
+.upload_butt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3F72AF;
+    color: #F9F7F7;
+    font-weight: 500;
+    transition: 0.3s all ease-in-out;
+}
+
+.upload_butt:hover {
+    transform: scale(1.05);
 }

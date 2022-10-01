@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./app
+    container_name: "app"
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: manage.py
+    volumes:
+      - app-data:/app
+      - app-uploads:/app/uploads
+    depends_on:
+      - redis
+    links:
+      - redis
+    networks:
+      - app-network
+
+  redis:
+    container_name: "redis"
+    image: redis:7.0.4-alpine
+    hostname: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  celery:
+    build: .
+    container_name: "app-celery"
+    command: celery -A app.jobs.tasks worker --pool=solo --loglevel=INFO
+    volumes:
+      - app-data:/app
+      - app-uploads:/app/uploads
+    depends_on:
+      - redis
+    links:
+      - redis
+    networks:
+      - app-network
+
+volumes:
+  app-data:
+    name: app-data
+  app-uploads:
+      name: app-uploads
+networks:
+  app-network:

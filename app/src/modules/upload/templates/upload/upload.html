@@ -5,4 +5,12 @@
 {% block content %}
     <h1>Upload File</h1>
     {% include('nav.html') %}
+    <form method="POST" enctype="multipart/form-data" id="UploadFile">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            <label for="floatingInput">PDF file to analyze</label>
+            {{ form.pdf_file(class_="form-control", id="floatingInput", accept="application/pdf") }}
+        </div>
+        <button type="submit" class="upload_butt" form="UploadFile">Upload</button>
+    </form>
 {% endblock %}
