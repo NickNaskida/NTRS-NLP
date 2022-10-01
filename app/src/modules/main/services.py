@@ -10,5 +10,5 @@ def filter_files(search_query) -> list:
     """
     files = FileModel.query.filter(
             FileModel.keywords.like('%' + search_query + '%') | FileModel.collocations.like('%' + search_query + '%')
-        )
+        ).order_by(FileModel.upload_date.desc())
     return files

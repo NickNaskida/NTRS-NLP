@@ -40,7 +40,7 @@ def extract_keywords_and_collocations(pdf_text) -> tuple:
     frequency_distribution = FreqDist(filtered_word_list)
 
     for item in frequency_distribution.most_common(30):
-        frequent_words.append(item[0])
+        frequent_words.append(f"{item[0]} ({item[1]})")
 
     # Extract collocations
     collocation_words = []

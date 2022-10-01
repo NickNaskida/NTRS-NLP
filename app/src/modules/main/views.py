@@ -14,7 +14,7 @@ main_blueprint = Blueprint(
 @main_blueprint.route('/', methods=['GET', 'POST'])
 def index():
     """Main route endpoint."""
-    files = FileModel.load_all()
+    files = FileModel.query.order_by(FileModel.upload_date.desc()).all()
 
     if request.method == "POST":
         search_query = request.form['query']
