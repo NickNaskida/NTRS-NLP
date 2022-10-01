@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | NTRS NLP{% endblock %}
+
+{% block content %}
+    <h1>NTRS NLP</h1>
+    <section class="search">
+        <form action="/" method="POST" class="search_form">
+            <input type="text" name="query" placeholder="Search by keywords ..." required>
+            <button class="search_butt" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </section>
+    <nav class="navbar">
+        <a href="{{ url_for('main.index') }}">
+            <div class="nav_link">
+                <div class="nav_link_icon">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/msoeawqm.json"
+                        trigger="hover"
+                        colors="primary:#112d4e,secondary:#3f72af"
+                        stroke="65"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </div>
+                <div class="nav_link_title">
+                    Search Home
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div class="nav_link">
+                <div class="nav_link_icon">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/bbnkwdur.json"
+                        trigger="morph"
+                        colors="primary:#112d4e,secondary:#3f72af"
+                        stroke="65"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </div>
+                <div class="nav_link_title">
+                    File Database
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div class="nav_link">
+                <div class="nav_link_icon">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/nocovwne.json"
+                        trigger="hover"
+                        colors="primary:#112d4e,secondary:#3f72af"
+                        stroke="65"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </div>
+                <div class="nav_link_title">
+                    Upload File
+                </div>
+            </div>
+        </a>
+    </nav>
+{% endblock %}

@@ -10,7 +10,7 @@ html, body {
     color: #000;
     overflow-x: hidden;
     font-family: "Rubik", sans-serif;
-    background-color: #73b4fe;
+    background-color: #F9F7F7;
 }
 
 body {
@@ -27,6 +27,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
 a {
     color: #000;
     text-decoration: none;
@@ -39,7 +45,11 @@ a:hover {
 
 /*=========container=========*/
 .container {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
 }
 
 /*==========scrollbar===========*/
@@ -52,7 +62,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #fcfffe;
+    background-color: #3F72AF;
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
@@ -60,5 +70,73 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #e0dddd;
+    background-color: #112D4E;
+}
+
+/*=========main-page=========*/
+.search {
+    margin-bottom: 2rem;
+}
+
+.search_form {
+    position: relative;
+}
+
+.search_form input {
+    width: 560px;
+    height: 44px;
+    padding: 0 50px;
+    border: none;
+    border-radius: 50px;
+    background-color: #DBE2EF;
+}
+
+.search_form input:focus {
+    border: none;
+    outline: none;
+}
+
+.search_butt {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #3F72AF;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+.nav_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav_link_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #DBE2EF;
+}
+
+.nav_link_title {
+    font-size: 12px;
+    font-weight: 500;
 }
