@@ -26,6 +26,9 @@ RUN [ "python3", "-c", "import nltk; nltk.download('stopwords'); nltk.download('
 # copy project
 COPY . .
 
+# Create uploads folder
+RUN mkdir -p /src/uploads
+
 # Initialize database
 RUN [ "python3", "-m", "flask", "db", "init" ]
 RUN [ "python3", "-m", "flask", "db", "migrate" ]

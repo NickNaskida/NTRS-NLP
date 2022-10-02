@@ -18,35 +18,7 @@ NTRS NLP, is a web application that will improve the accessibility and discovera
     ├─ .env.example
     ├─ .env
     ```
-   
-3. Run initialization commands
-    ```
-    cd app
-    ```
-
-    #### Windows
-    ```
-    ./scripts/windows/init.ps1
-   
-    or
-   
-    $env:FLASK_APP = "manage"
-    flask db init
-    flask db migrate
-    flask db upgrade
-    ```
-
-    #### Linux
-    ```
-    sudo bash ./scripts/linux/init.sh
-    ```
-
-    ```
-    # Return to project root directory
-    cd ..
-    ```
-
-4. install docker and build the project
+3. install docker and build the project
     
     ```
     Get docker here: https://docs.docker.com/get-docker/
@@ -55,5 +27,5 @@ NTRS NLP, is a web application that will improve the accessibility and discovera
     docker-compose up -d --build
     ```
 
-5. Open http://127.0.0.1:5000/ in your browser.
-6. Enjoy 💫
+4. Open http://127.0.0.1:5000/ in your browser.
+5. Enjoy 💫
