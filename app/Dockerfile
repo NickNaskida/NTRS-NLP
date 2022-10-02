@@ -20,11 +20,13 @@ RUN apk add build-base   # install the GCC, libc-dev and binutils packages (gree
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# NLTK stop words download
+# NLTK word lists download
 RUN [ "python3", "-c", "import nltk; nltk.download('stopwords'); nltk.download('punkt'); nltk.download('wordnet')" ]
 
 # copy project
 COPY . .
+
+RUN ./scripts/linux/init.sh
 
 EXPOSE 5000
 
