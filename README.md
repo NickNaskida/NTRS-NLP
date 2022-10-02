@@ -2,6 +2,8 @@
 #### AI application to improve the accessibility and discoverability of records in the NTRS (NASA Technical Report Server)
 
 ### Overview
+NTRS NLP, is a web application that will improve the accessibility and discoverability of 300 000+ records in the NTRS (NASA Technical Report Server). Nowadays it is vital for scientific and historical research communities to have trouble-free and fast access to data that is stored on the NTRS. Otherwise, they may have to “reinvent the wheel” or spend their valuable time, which can be spent on further research and development. This web application employs search tools, which allow users to search necessary files by keywords and collocations, understand the uploaded file’s general content without fully reading it, and generate statistical reports of language use.
+
 
 ### 📋Documentation
 1. Clone the repository
