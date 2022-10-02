@@ -26,8 +26,6 @@ RUN [ "python3", "-c", "import nltk; nltk.download('stopwords'); nltk.download('
 # copy project
 COPY . .
 
-RUN ./scripts/linux/init.sh
-
 EXPOSE 5000
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0" ]

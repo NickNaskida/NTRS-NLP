@@ -18,15 +18,35 @@ NTRS NLP, is a web application that will improve the accessibility and discovera
     ├─ .env.example
     ├─ .env
     ```
+   
+3. Run initialization commands
+    ```
+    cd app
+    ```
 
-3. install docker and build the project
+    #### Windows
+    ```
+    ./scripts/windows/init.ps1
+    ```
+
+    #### Linux
+    ```
+    sudo bash ./scripts/linux/init.sh
+    ```
 
     ```
-    Get docker here https://docs.docker.com/get-docker/
+    # Return to project root directory
+    cd ..
+    ```
+
+4. install docker and build the project
+    
+    ```
+    Get docker here: https://docs.docker.com/get-docker/
    
-    # After install run this from directory where docker-compose.yml file is located
+    # After install, launch it and run this from directory where docker-compose.yml file is located
     docker-compose up -d --build
     ```
 
-4. Open http://127.0.0.1:5000/ in your browser.
-5. Enjoy 💫
+5. Open http://127.0.0.1:5000/ in your browser.
+6. Enjoy 💫
