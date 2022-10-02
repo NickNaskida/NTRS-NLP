@@ -27,6 +27,13 @@ NTRS NLP, is a web application that will improve the accessibility and discovera
     #### Windows
     ```
     ./scripts/windows/init.ps1
+   
+    or
+   
+    $env:FLASK_APP = "manage"
+    flask db init
+    flask db migrate
+    flask db upgrade
     ```
 
     #### Linux
