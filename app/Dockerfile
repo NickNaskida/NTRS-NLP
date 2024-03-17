@@ -1,7 +1,7 @@
 # pull official base image
 FROM python:3.9.13-alpine
 
-MAINTAINER Nikoloz Naskidashvili <nikoloz2005@gmail.com>
+MAINTAINER Nikoloz Naskidashvili
 
 # environment variables
 ENV FLASK_ENV=development \
